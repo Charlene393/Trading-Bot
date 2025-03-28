@@ -1,7 +1,7 @@
 import pandas as pdb
 
 from td.client import TDClient
-from td.utilis import miliseconds_since_epoch
+from td.utils import milliseconds_since_epoch
 
 from datetime import datetime, time, timezone
 

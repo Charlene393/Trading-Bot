@@ -9,7 +9,7 @@ class Portfolio():
         self.risk_tolerance = 0.0
         self.account_number = account_number
         
-    def add_position(self, symbol:str, asset_type: str, purchase_date: Optional[str] ,quantity: init = 0, purchase_price: float =0.0)-> dict:
+    def add_position(self, symbol:str, asset_type: str, purchase_date: Optional[str] ,quantity: int = 0, purchase_price: float =0.0)-> dict:
         
         self.positions[symbol]= {}
         self.positions[symbol]['symbol']= symbol
@@ -38,14 +38,14 @@ class Portfolio():
         else:
             raise TypeError("Positions must be a list of directories")
         
-    def remove_position(self,symbol:str) -> Tuple[bool, str]:
+    def remove_position(self,symbol:str) -> tuple[bool, str]:
         
         if symbol in self.positions:
             del self.positions[symbol]
             return (True, "{Symbol}was successfully removed". format(symbol = symbol))
         else:
-             return (False, "{Symbol}did not exist in the portfolio". format(symbol = symbol))
-         
+            return (False, "{Symbol}did not exist in the portfolio". format(symbol = symbol))
+        
     
     def in_portfolio(self, symbol: str) -> bool:
         
